@@ -158,13 +158,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Menu</a>
+          <a class="nav-link active" aria-current="page" href="menu.php">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <a class="nav-link active" aria-current="page" href="bookings.php">Book Table</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-current="true">Oniline Order</a>
+        <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
