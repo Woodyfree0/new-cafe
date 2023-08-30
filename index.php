@@ -94,22 +94,18 @@
     </div>
   </div>
 </nav>
-
-<main class="container">
 </main>
-
+   </body> 
+   <footer>     
 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
+      <p>Oranage Team Cafe Website 2023.</p>
+      <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com"><i class="bi bi-twitter bi-dark"></i></a></li>
+  <li class="ms-3"><a class="link-body-emphasis" href="https://instagram.com"><i class="bi bi-instagram bi-dark"></i></a></li>
+  <li class="ms-3"><a class="link-body-emphasis" href="https://facebook.com"><i class="bi bi-facebook bi-dark"></i></a></li>
+</ul>
 
-    </body> 
+</div>
+</footer>
 
     <script src="../assets/js/color-modes.js"></script> 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>

@@ -10,7 +10,8 @@
         <title>Menu Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css">  
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">    
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -94,19 +95,59 @@
     </div>
   </div>
 </nav>
-  <footer>     
-<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-      </ul>
-    </div>
-  </footer>
+
+<div class="menu-container">
+<div class="menu-item">
+      <div class="item-name">Classic Burger</div>
+      <div class="item-description">Juicy beef patty with lettuce, tomato, and special sauce.</div>
+      <div class="item-price">$9.99</div>
+</div>
+<div class="menu-item">
+      <div class="item-name">Margherita Pizza</div>
+      <div class="item-description">Fresh mozzarella, tomato sauce, and basil on thin crust.</div>
+      <div class="item-price">$12.49</div>
+</div>
+<div class="menu-item">
+      <div class="item-name">Caesar Salad</div>
+      <div class="item-description">Crisp romaine lettuce with parmesan cheese and Caesar dressing.</div>
+      <div class="item-price">$7.99</div>
+</div>
+<div class="menu-item">
+  <div class="item-name">Spaghetti Carbonara</div>
+  <div class="item-description">Pasta with creamy egg-based sauce, pancetta, and parmesan.</div>
+  <div class="item-price">$11.99</div>
 </div>
 
-    </body>
+<div class="menu-item">
+  <div class="item-name">Mushroom Risotto</div>
+  <div class="item-description">Creamy risotto with a variety of sautéed mushrooms.</div>
+  <div class="item-price">$10.99</div>
+</div>
+
+<div class="menu-item">
+  <div class="item-name">Grilled Salmon</div>
+  <div class="item-description">Freshly grilled salmon fillet served with steamed vegetables.</div>
+  <div class="item-price">$14.99</div>
+</div>
+
+<div class="menu-item">
+  <div class="item-name">Veggie Wrap</div>
+  <div class="item-description">Grilled vegetables and hummus wrapped in a whole wheat tortilla.</div>
+  <div class="item-price">$8.49</div>
+</div>
+</div>
+</body>
+  <footer>     
+<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>Oranage Team Cafe Website 2023.</p>
+      <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com"><i class="bi bi-twitter bi-dark"></i></a></li>
+  <li class="ms-3"><a class="link-body-emphasis" href="https://instagram.com"><i class="bi bi-instagram bi-dark"></i></a></li>
+  <li class="ms-3"><a class="link-body-emphasis" href="https://facebook.com"><i class="bi bi-facebook bi-dark"></i></a></li>
+</ul>
+
+</div>
+</footer>
+
 
     <script src="../assets/js/color-modes.js"></script> 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
