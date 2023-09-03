@@ -20,7 +20,14 @@
 	  8080
 	],
 	"features": {
-	  "ghcr.io/devcontainers/features/github-cli:1": {}
+	  "ghcr.io/devcontainers/features/github-cli:1": {
+		"installDirectlyFromGitHubRelease": true,
+		"version": "latest"
+	},
+	"ghcr.io/shyim/devcontainers-features/php:0": {
+		"installComposer": true,
+		"version": "8.2"
+	}
 	},
   
 	// Use 'postCreateCommand' to run commands after the container is created.
