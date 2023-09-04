@@ -85,6 +85,8 @@
         </li>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="rota.php">Staff Login</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
