@@ -97,7 +97,7 @@
 
 <section class="about-us">
         <h2>About Us test 1</h2>
-        <p>Welcome to Our Restaurant! We pride ourselves in providing delicious and mouthwatering dishes made from the finest ingredients. With a team of skilled chefs and a cozy ambiance, we offer an unforgettable dining experience that will satisfy your taste buds and leave you wanting more.</p>
+        <p>elcome to Our Restaurant! We pride ourselves in providing delicious and mouthwatering dishes made from the finest ingredients. With a team of skilled chefs and a cozy ambiance, we offer an unforgettable dining experience that will satisfy your taste buds and leave you wanting more.</p>
         <p>Our commitment to quality and service has earned us a loyal customer base. Whether you're looking for a romantic dinner, a family gathering, or a special celebration, Our Restaurant is the perfect choice.</p>
         <p>Visit us today and explore our menu of delectable options, all prepared with passion and care. We look forward to serving you!</p>
     </section>
