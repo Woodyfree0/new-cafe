@@ -1,32 +1,24 @@
 <?php
 # Fill our vars and run on cli
 # $ php -f db-connect-test.php
-if (function_exists('mysqli_connect')) {
-    echo 'MySQLi is enabled';
-} else {
-    echo 'MySQLi is not enabled';
-}
 phpinfo();
 
-$dbname = 'cafe';
-$dbuser = 'root';
-$dbpass = 'password';
-$dbhost = 'localhost';
+$serverName = "localhost"; // Replace with your SQL Server hostname or IP address
+$databaseName = "cafe"; // Replace with your database name
+$username = "root"; // Replace with your SQL Server username
+$password = "password"; // Replace with your SQL Server password
 
-$connect = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
-mysqli_select_db($connect, $dbname) or die("Could not open the db '$dbname'");
-
-$test_query = "SHOW TABLES FROM $dbname";
-$result = mysqli_query($connect, $test_query);
-
-$tblCnt = 0;
-while($tbl = mysqli_fetch_array($result)) {
-  $tblCnt++;
-  #echo $tbl[0]."<br />\n";
+try {
+    $dsn = "odbc:Driver={SQL Server};Server=$serverName;Database=$databaseName;";
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected to SQL Server successfully!";
+    
+    // You can perform database operations here
+    
+    // Don't forget to close the connection when done
+    $conn = null;
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
-
-if (!$tblCnt) {
-  echo "There are no tables<br />\n";
-} else {
-  echo "There are $tblCnt tables<br />\n";
-}
+?>
