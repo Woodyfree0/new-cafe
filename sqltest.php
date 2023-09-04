@@ -1,6 +1,12 @@
 <?php
 # Fill our vars and run on cli
 # $ php -f db-connect-test.php
+if (function_exists('mysqli_connect')) {
+    echo 'MySQLi is enabled';
+} else {
+    echo 'MySQLi is not enabled';
+}
+phpinfo();
 
 $dbname = 'cafe';
 $dbuser = 'root';
