@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+
 $serverName = "localhost"; // Replace with your SQL Server hostname or IP address
 $databaseName = "cafe"; // Replace with your database name
 $username = "root"; // Replace with your SQL Server username
