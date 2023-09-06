@@ -21,6 +21,12 @@
     <link href="styles.css" rel="stylesheet">
     </head>
     <body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Our Menu</h1>
+            <p>Discover our delicious dishes</p>
+        </div>
+    </header>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -98,7 +104,6 @@
     </div>
   </div>
 </nav>
-
 <div class="menu-container">
 <div class="menu-item">
       <div class="item-name">Classic Burger</div>
@@ -140,6 +145,7 @@
 </div>
 </div>
 </body>
+
   <footer>     
 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>Oranage Team Cafe Website 2023.</p>

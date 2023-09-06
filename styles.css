@@ -161,6 +161,7 @@
       .item-name {
         font-weight: bold;
         margin-bottom: 5px;
+        color: black;
       }
       .item-description {
         color: #555555;
@@ -188,3 +189,35 @@
         line-height: 1.6;
         margin-bottom: 20px;
     }
+    /* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-image: url('assets/photos/appetizer-bowl-delicious-1640772.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust the height as needed */
+  color: #fff; /* Text color on top of the background image */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header h1 {
+  font-size: 45px;
+  margin: 5;
+}
+
+.header p {
+  font-size: 35px;
+  margin-top: 20px;
+}
+.header .header-content {
+  color: #fff;
+  -webkit-text-stroke: 1px black; /* Add a 1-pixel black outline */
+  text-stroke: 1px black; /* Add a 1-pixel black outline */
+}
