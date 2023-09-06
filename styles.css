@@ -189,6 +189,11 @@
         line-height: 1.6;
         margin-bottom: 20px;
     }
+    .gallery-item img {
+      max-width: 150%; /* Set a maximum width */
+      max-height: 375px; /* Set a maximum height */
+      object-fit: cover; /* Crop and cover the container */
+  }
 body {
   margin: 0;
   padding: 0;

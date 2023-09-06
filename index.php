@@ -103,6 +103,14 @@
         <p>Our commitment to quality and service has earned us a loyal customer base. Whether you're looking for a romantic dinner, a family gathering, or a special celebration, Our Restaurant is the perfect choice.</p>
         <p>Visit us today and explore our menu of delectable options, all prepared with passion and care. We look forward to serving you!</p>
     </section>
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-item">
+            <img src="assets/photos/art-bread-brown-1170659.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/photos/coffee-caffeine-drink-cup-stock-getty.jpg" alt="Image 2">
+        </div>
 </main>
    </body> 
    <footer>     
