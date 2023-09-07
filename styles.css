@@ -182,25 +182,48 @@
     .about-us h2 {
         font-size: 24px;
         margin-bottom: 20px;
+        margin-top: 10px;
     }
-    
     .about-us p {
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: 20px;
-    }
-    .gallery-item img {
-      max-width: 150%; /* Set a maximum width */
-      max-height: 375px; /* Set a maximum height */
-      object-fit: cover; /* Crop and cover the container */
+    }.gallery {
+      text-align: center;
+      display: flex;
+      overflow-x: auto; /* Enable horizontal scrolling */
   }
+  .gallery h2 {
+    margin-bottom: 20px;
+    margin-top: 10px; /* Add margin to separate the header from images */
+}
+  .gallery-item {
+      flex: 0 0 auto; /* Ensure items don't grow or shrink */
+      margin-right: 20px; /* Add margin between items */
+  }
+  .gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+  .gallery-item:last-child {
+      margin-right: 0; /* Remove margin for the last item */
+  }
+  
+  .gallery-item img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+  }
+  
 body {
   margin: 0;
   padding: 0;
 }
 
 .header {
-  background-image: url('assets/photos/appetizer-bowl-delicious-1640772.jpg'); /* Replace with your image path */
+  background-image: url('assets/photos/Menu_background1.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   height: 400px; /* Adjust the height as needed */

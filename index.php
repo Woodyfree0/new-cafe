@@ -106,11 +106,18 @@
     <section class="gallery">
         <h2>Gallery</h2>
         <div class="gallery-item">
-            <img src="assets/photos/art-bread-brown-1170659.jpg" alt="Image 1">
+            <img src="assets/photos/cafe_img1.jpg" alt="Image 1">
         </div>
         <div class="gallery-item">
-            <img src="assets/photos/coffee-caffeine-drink-cup-stock-getty.jpg" alt="Image 2">
+            <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
         </div>
+        <div class="gallery-item">
+            <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
+        </div>
+    </section>
 </main>
    </body> 
    <footer>     
@@ -123,7 +130,9 @@
 
 </div>
 </footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script src="../assets/js/color-modes.js"></script> 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
 </html>
