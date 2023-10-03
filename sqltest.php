@@ -1,11 +1,14 @@
 <?php
-# Fill our vars and run on cli
-# $ php -f db-connect-test.php
-phpinfo();
+$servername = "localhost";
+$username = "root";
+$password = "password";
+$database = "CafeDB";
 
-$serverName = "localhost"; // Replace with your SQL Server hostname or IP address
-$databaseName = "cafeDB"; // Replace with your database name
-$username = "root"; // Replace with your SQL Server username
-$password = "password"; // Replace with your SQL Server password
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $database);
 
-
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>

@@ -21,7 +21,8 @@
   ],
   "features": {
 	"ghcr.io/devcontainers/features/github-cli:1": {},
-	"ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {}
+	"ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {},
+	"ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
