@@ -40,8 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Display the outcome message -->
     <p><?php echo $outcome_message; ?></p>
     
-    <!-- Debugging: Display any SQL errors -->
-    <p><?php echo $stmt->error; ?></p>
     <!-- Redirect back to the menu page after a brief delay -->
     <script>
         setTimeout(function() {
