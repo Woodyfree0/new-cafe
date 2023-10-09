@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST['price'];
 
     // If an item ID is provided, it's an edit operation
-    if (isset($_POST['item_id'])) {
+    if (isset($_POST['edit'])) {
         $item_id = $_POST['item_id'];
         $sql = "UPDATE Menu_items SET Name = '$name', `Desc` = '$description', Price = $price WHERE item_id = $item_id";
-    } else {
+    } elseif (isset($_POST['add'])) {
         $sql = "INSERT INTO Menu_items (Name, `Desc`, Price) VALUES ('$name', '$description', $price)";
     }
 

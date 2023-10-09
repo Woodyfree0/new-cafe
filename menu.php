@@ -120,7 +120,8 @@
     <label for="price">Price:</label>
     <input type="number" name="price" id="price" step="0.01" required>
 
-    <button type="submit">Save</button>
+    <button type="submit" name= "edit">Save</button>
+    <button type="submit" name="add">Add New</button>
 </form>
 
 <!-- menu container -->
