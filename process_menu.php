@@ -3,35 +3,33 @@ include('DB_Connect.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form input
-    $item_id = $_POST['item_id'];
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
 
-    // Use prepared statements to prevent SQL injection
+    // If an item ID is provided, it's an edit operation
     if (!empty($item_id)) {
-        // Update an existing item
-        $stmt = $conn->prepare("UPDATE Menu_items SET Name = ?, `Desc` = ?, Price = ? WHERE item_id = ?");
-        $stmt->bind_param("ssdi", $name, $description, $price, $item_id);
+        $sql = "UPDATE Menu_items SET `Desc` = '$description', Price = $price WHERE item_id = $item_id";
     } else {
-        // Insert a new item
-        $stmt = $conn->prepare("INSERT INTO Menu_items (Name, `Desc`, Price) VALUES (?, ?, ?)");
-        $stmt->bind_param("ssd", $name, $description, $price);
+        $sql = "INSERT INTO Menu_items (Name, `Desc`, Price) VALUES ('$name', '$description', $price)";
     }
 
-    if ($stmt->execute()) {
+    // Execute the SQL query
+    if ($conn->query($sql) === TRUE) {
         // Successful operation
         header("Location: menu.php"); // Redirect back to the menu page
+        echo "Item added successfully!";
         exit();
     } else {
         // Error occurred
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $conn->error;
     }
 
-    $stmt->close();
+    // Close the database connection
     $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Display the outcome message -->
     <p><?php echo $outcome_message; ?></p>
     
+    <!-- Debugging: Display any SQL errors -->
+    <p><?php echo $stmt->error; ?></p>
     <!-- Redirect back to the menu page after a brief delay -->
     <script>
         setTimeout(function() {
