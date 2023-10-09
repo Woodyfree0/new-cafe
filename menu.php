@@ -108,8 +108,8 @@
 </nav>
 <!-- menu update -->
 <form action="process_menu.php" method="POST">
-    <!-- Hidden field for item ID (if editing) -->
-    <input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
+    <label for ="Item"> Item ID: </label>
+    <input type="number" name="item_id" id="ID">
 
     <label for="name">Item Name:</label>
     <input type="text" name="name" id="name" required>
