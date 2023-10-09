@@ -15,6 +15,9 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="navbar-fixed.css" rel = "stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <?
+    include('DB_Connect.php');
+    ?>
     </head>
     <body>
       <!-- header -->
@@ -103,49 +106,26 @@
     </div>
   </div>
 </nav>
+<!-- menu update -->
+
 
 <!-- menu container -->
-<div class="menu-container">
-<div class="menu-item">
-      <div class="item-name">Classic Burger</div>
-      <div class="item-description">Juicy beef patty with lettuce, tomato, and special sauce.</div>
-      <div class="item-price">$9.99</div>
-</div>
-<div class="menu-item">
-      <div class="item-name">Margherita Pizza</div>
-      <div class="item-description">Fresh mozzarella, tomato sauce, and basil on thin crust.</div>
-      <div class="item-price">$12.49</div>
-</div>
-<div class="menu-item">
-      <div class="item-name">Caesar Salad</div>
-      <div class="item-description">Crisp romaine lettuce with parmesan cheese and Caesar dressing.</div>
-      <div class="item-price">$7.99</div>
-</div>
-<div class="menu-item">
-  <div class="item-name">Spaghetti Carbonara</div>
-  <div class="item-description">Pasta with creamy egg-based sauce, pancetta, and parmesan.</div>
-  <div class="item-price">$11.99</div>
-</div>
-
-<div class="menu-item">
-  <div class="item-name">Mushroom Risotto</div>
-  <div class="item-description">Creamy risotto with a variety of sautéed mushrooms.</div>
-  <div class="item-price">$10.99</div>
-</div>
-
-<div class="menu-item">
-  <div class="item-name">Grilled Salmon</div>
-  <div class="item-description">Freshly grilled salmon fillet served with steamed vegetables.</div>
-  <div class="item-price">$14.99</div>
-</div>
-
-<div class="menu-item">
-  <div class="item-name">Veggie Wrap</div>
-  <div class="item-description">Grilled vegetables and hummus wrapped in a whole wheat tortilla.</div>
-  <div class="item-price">$8.49</div>
-</div>
-</div>
-</body>
+<?
+$sql = "SELECT * FROM Menu_items";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='menu-item'>";
+        echo "<div class='item-name'>" . $row["Name"] . "</div>";
+        echo "<div class='item-description'>" . $row["Desc"] . "</div>";
+        echo "<div class='item-price'>$" . $row["Price"] . "</div>";
+        echo "</div>";
+    }
+} else {
+    echo "No menu items found.";
+}
+?>
 <!-- footer -->
   <footer>     
 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
