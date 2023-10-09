@@ -6,7 +6,7 @@ $password = "password";
 $database = "php_docker";
 
 // Create a database connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check for connection errors
 if ($conn->connect_error) {

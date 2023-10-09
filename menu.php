@@ -107,7 +107,21 @@
   </div>
 </nav>
 <!-- menu update -->
+<form action="process_menu.php" method="POST">
+    <!-- Hidden field for item ID (if editing) -->
+    <input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
 
+    <label for="name">Item Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" required></textarea>
+
+    <label for="price">Price:</label>
+    <input type="number" name="price" id="price" step="0.01" required>
+
+    <button type="submit">Save</button>
+</form>
 
 <!-- menu container -->
 <?
