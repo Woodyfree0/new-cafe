@@ -9,4 +9,10 @@ if (isset($_SESSION['username'])) {
     // If the "username" session variable is not set, it means the user is not logged in.
     echo 'Welcome, Guest'; 
 }
+
+if (isset($_SESSION['username'])) {
+    $loggedIn = true;
+} else {
+    $loggedIn = false;
+}
 ?>
