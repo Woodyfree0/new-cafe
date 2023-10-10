@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_num_rows($result) === 1) {
         // Authentication successful
+        $_SESSION['username'] = $username;
         header("Location: menu.php"); // Redirect to the dashboard or authorized page
         exit();
     } else {
