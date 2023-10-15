@@ -114,10 +114,10 @@
             <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
         </div>
         <div class="gallery-item">
-            <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
+            <img src="assets/photos/cafe3.jpg" alt="Image 2">
         </div>
         <div class="gallery-item">
-            <img src="assets/photos/cafe_img2.jpg" alt="Image 2">
+            <img src="assets/photos/cafe4.jpg" alt="Image 2">
         </div>
     </section>
 </main>
