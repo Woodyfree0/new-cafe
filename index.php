@@ -1,3 +1,4 @@
+<? session_start(); ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -69,7 +70,7 @@
     </div>
 
     
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Cafe Website</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,14 +86,15 @@
         </li>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="rota.php">Staff Login</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="login.php">Staff Login</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="Logout.php">Logout</a>
+        </li>
+        <li> <? include('user_info.php') ?>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
