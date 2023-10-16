@@ -135,7 +135,7 @@ if (isset($_SESSION['available_tables']) && !empty($_SESSION['available_tables']
       echo "<input type='hidden' name='table_id' value='" . $table["table_id"] . "'>";
       echo "<input type='hidden' name='selected_date' value='$selected_date'>";
       echo "<input type='hidden' name='selected_time' value='$selected_time'>";
-      echo "<button type='Reserve'>Select</button>";
+      echo "<button type='submit' name='reserve_table' value='" . $table["table_id"] . "'>Reserve</button>";
       echo "</form>";
   }
 } else {
