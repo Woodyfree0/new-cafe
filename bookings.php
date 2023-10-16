@@ -1,3 +1,4 @@
+<? session_start(); ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -68,8 +69,7 @@
       </ul>
     </div>
 
-    
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Cafe Website</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,19 +87,61 @@
         <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="rota.php">Staff Login</a>
+        <a class="nav-link active" aria-current="page" href="login.php">Staff Login</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="Logout.php">Logout</a>
+        </li>
+        <li> <? include('user_info.php') ?>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
-</div>
+<body>
+    <h1>Table Booking</h1>
 
+    <form action="process_booking.php" method="POST">
+        <label for="selected_date">Select Date:</label>
+        <input type="date" name="selected_date" required>
 
+        <label for="selected_time">Select Time:</label>
+        <select name="selected_time" required>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="18:00:00"  >6:00 PM</option>
+            <option value="7:00 PM">7:00 PM</option> 
+        </select>
+        <input type="submit" value="Check Availability">
+    </form>
+    <form action="process_booking.php" method="POST">
+    <input type="submit" name="clear_available_tables" value="Clear Available Tables">
+</form>
+
+    <h2>Available Tables:</h2>
+    <?php
+if (isset($_SESSION['available_tables']) && !empty($_SESSION['available_tables'])) {
+  $available_tables = $_SESSION['available_tables'];
+  $selected_date = $_SESSION['selected_date'];
+  $selected_time = $_SESSION['selected_time'];
+
+  foreach ($available_tables as $table) {
+      echo "Table #" . $table["table_number"] . " (Capacity: " . $table["capacity"] . ") " . "Time available: " . $table["time_slot"] .  " Date selected: " . $selected_date;
+      // Add a form for reservation with table_id, selected_date, and selected_time
+      echo "<form action='make_reservation.php' method='POST'>";
+      echo "<input type='hidden' name='table_id' value='" . $table["table_id"] . "'>";
+      echo "<input type='hidden' name='selected_date' value='$selected_date'>";
+      echo "<input type='hidden' name='selected_time' value='$selected_time'>";
+      echo "<button type='Reserve'>Select</button>";
+      echo "</form>";
+  }
+} else {
+  echo "No available tables for the selected time slot.";
+}
+?>
 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>Oranage Team Cafe Website 2023.</p>
       <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com"><i class="bi bi-twitter bi-dark"></i></a></li>
