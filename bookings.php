@@ -135,8 +135,10 @@ if (isset($_SESSION['available_tables']) && !empty($_SESSION['available_tables']
       echo "<input type='hidden' name='table_id' value='" . $table["table_id"] . "'>";
       echo "<input type='hidden' name='selected_date' value='$selected_date'>";
       echo "<input type='hidden' name='selected_time' value='$selected_time'>";
-      echo "<button type='submit' name='reserve_table' value='" . $table["table_id"] . "'>Reserve</button>";
-      echo "</form>";
+      echo '<button type="submit">';
+      echo '<a href="make_reservation.php?table_id=' . $table["table_id"] . '&selected_date=' . $selected_date . '&selected_time=' . $selected_time . '">Reserve</a>';
+      echo '</button>';
+      echo '</form>';
   }
 } else {
   echo "No available tables for the selected time slot.";
