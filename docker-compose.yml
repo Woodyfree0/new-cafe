@@ -10,7 +10,7 @@ services:
     volumes:
       - "./db:/docker-entrypoint-initdb.d" # this is how we persist a sql db even when container stops
   www:
-    image: mysqliphp:latest
+    image: woodyfree/mysqliphp:latest
     volumes:
       - "./:/var/www/html" # sync the current dir on local machine to the dir of container
     ports:
