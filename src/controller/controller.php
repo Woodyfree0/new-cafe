@@ -1,7 +1,8 @@
 <?
-namespace Controller;
+namespace MyApp\controller\controller;
+use PDO;
 use PDOException;
-class RosterController {
+class controller {
     private $db;
 
     public function __construct($db) {

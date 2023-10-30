@@ -40,8 +40,7 @@ include('DB_Connect.php');
 use Model\RosterModel;
 use Controller\RosterController;
 
-$model = new Model\RosterModel($conn); 
-$controller = new Controller\RosterController($model);
+
 
 if (isset($_GET['action'])) {
   $action = $_GET['action'];

@@ -1,6 +1,6 @@
 <?
-namespace Model;
-class RosterModel {
+namespace MyApp\model;
+class model {
     private $model;
 
     public function __construct($model) {

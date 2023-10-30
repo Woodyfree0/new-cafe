@@ -7,37 +7,22 @@ namespace Composer\Autoload;
 class ComposerStaticInitd751713988987e9331980363e24189ce
 {
     public static $prefixLengthsPsr4 = array (
-        'V' => 
-        array (
-            'View\\' => 5,
-        ),
         'M' => 
         array (
-            'Model\\' => 6,
-        ),
-        'C' => 
-        array (
-            'Controller\\' => 11,
+            'MyApp\\' => 6,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'View\\' => 
+        'MyApp\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/View',
-        ),
-        'Model\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/model',
-        ),
-        'Controller\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/controller',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'MyApp\\model\\model' => __DIR__ . '/../..' . '/src/model/model.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
