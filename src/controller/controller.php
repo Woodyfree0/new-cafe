@@ -1,5 +1,5 @@
 <?
-namespace MyApp\controller\controller;
+namespace MyApp\controller;
 use PDO;
 use PDOException;
 class controller {
