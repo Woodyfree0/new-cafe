@@ -17,8 +17,6 @@
     <link href="navbar-fixed.css" rel = "stylesheet">
     <link href="styles.css" rel="stylesheet">
   </head>
-  <body>
-    <h1> Roster</h1>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -37,36 +35,12 @@
 <?
 require 'vendor/autoload.php';
 include('DB_Connect.php');
-use Model\RosterModel;
-use Controller\RosterController;
+$model = new MyApp\model\model($conn); 
+$controller = new MyApp\controller\controller($conn);
+$data = $controller -> read();
+include('src/view/read.php');
 
-
-
-if (isset($_GET['action'])) {
-  $action = $_GET['action'];
-
-  switch ($action) {
-      case 'create':
-          $controller->create();
-          break;
-      case 'read':
-          $controller->read();
-          break;
-      case 'update':
-          $controller->update();
-          break;
-      case 'delete':
-          $controller->delete();
-          break;
-      default:
-          echo 'Invalid action';
-          break;
-  }
-}
-
-include ('view/read.php');
 ?>
-
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
               id="bd-theme"

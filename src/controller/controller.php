@@ -1,11 +1,14 @@
-<?
+<?php
 namespace MyApp\controller;
-use PDO;
-use PDOException;
+
+use MyApp\model\model;
+use mysqli;
+use Exception;
+
 class controller {
     private $db;
 
-    public function __construct($db) {
+    public function __construct(mysqli $db) {
         $this->db = $db;
     }
 
@@ -17,8 +20,14 @@ class controller {
                 '" . $data['LastName'] . "',
                 '" . $data['StaffID'] . "'
             )";
-            return $this->db->exec($query);
-        } catch (PDOException $e) {
+            $result = $this->db->query($query);
+
+            if (!$result) {
+                throw new Exception("Failed to insert data");
+            }
+
+            return $result;
+        } catch (Exception $e) {
             // Handle database error
             return false;
         }
@@ -26,14 +35,29 @@ class controller {
 
     public function read() {
         try {
-            $query = "SELECT * FROM roster";
+            $query = "SELECT * FROM Roster";
             $result = $this->db->query($query);
-            return $result->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            // Handle database error
-            return array();
+    
+            if (!$result) {
+                throw new Exception("Query execution failed");
+            }
+    
+            $data = [];
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+    
+            // Include the view file and pass $data to it
+            include('src/view/read.php');
+    
+            return $data;
+        } catch (Exception $e) {
+            // Handle any exceptions, e.g., log the error
+            echo "An error occurred: " . $e->getMessage();
+            return [];
         }
     }
+    
 
     public function update($id, $data) {
         try {
@@ -43,8 +67,14 @@ class controller {
                 LastName = '" . $data['LastName'] . "',
                 StaffID = '" . $data['StaffID'] . "'
                 WHERE ID = $id";
-            return $this->db->exec($query);
-        } catch (PDOException $e) {
+            $result = $this->db->query($query);
+
+            if (!$result) {
+                throw new Exception("Failed to update data");
+            }
+
+            return $result;
+        } catch (Exception $e) {
             // Handle database error
             return false;
         }
@@ -53,12 +83,17 @@ class controller {
     public function delete($id) {
         try {
             $query = "DELETE FROM roster WHERE ID = $id";
-            return $this->db->exec($query);
-        } catch (PDOException $e) {
+            $result = $this->db->query($query);
+
+            if (!$result) {
+                echo ("Failed to delete data");
+            }
+
+            return $result;
+        } catch (Exception $e) {
             // Handle database error
             return false;
         }
     }
 }
-
 ?>

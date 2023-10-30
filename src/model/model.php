@@ -1,25 +1,29 @@
-<?
-namespace MyApp\model;
-class model {
-    private $model;
+<?php
 
-    public function __construct($model) {
-        $this->model = $model;
+namespace MyApp\model;
+
+use mysqli;
+
+class Model {
+    private $db;
+
+    public function __construct(mysqli $db) {
+        $this->db = $db;
     }
 
-    public function create() {
+    public function create($data) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Handle form submission for creating a new roster entry
-            $data = [
-                'Date' => $_POST['Date'],
-                'FirstName' => $_POST['FirstName'],
-                'LastName' => $_POST['LastName'],
-                'StaffID' => $_POST['StaffID']
-            ];
+            $Date = $data['Date'];
+            $FirstName = $data['FirstName'];
+            $LastName = $data['LastName'];
+            $StaffID = $data['StaffID'];
 
-            if ($this->model->create($data)) {
+            $query = "INSERT INTO roster (Date, FirstName, LastName, StaffID) VALUES ('$Date', '$FirstName', '$LastName', '$StaffID')";
+
+            if ($this->db->query($query)) {
                 // Successfully created a new entry
-                header('Location: /crud/roster/read'); // Redirect to the read page
+                header('Location: /crud/roster/read');
             } else {
                 // Handle the error, e.g., display an error message or log it
                 echo 'Error creating the roster entry';
@@ -31,56 +35,72 @@ class model {
     }
 
     public function read() {
-        // Retrieve and display the list of roster entries
-        $entries = $this->model->read();
-        include 'view/read.php';
+        $query = "SELECT * FROM roster";
+        $result = $this->db->query($query);
+        $data = [];
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+        }
+
+        return $data;
     }
 
-    public function update() {
+    public function update($id, $data) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Handle form submission for updating a roster entry
-            $id = $_POST['ID'];
-            $data = [
-                'Date' => $_POST['Date'],
-                'FirstName' => $_POST['FirstName'],
-                'LastName' => $_POST['LastName'],
-                'StaffID' => $_POST['StaffID']
-            ];
+            $Date = $data['Date'];
+            $FirstName = $data['FirstName'];
+            $LastName = $data['LastName'];
+            $StaffID = $data['StaffID'];
 
-            if ($this->model->update($id, $data)) {
+            $query = "UPDATE roster SET Date = '$Date', FirstName = '$FirstName', LastName = '$LastName', StaffID = '$StaffID' WHERE ID = $id";
+
+            if ($this->db->query($query)) {
                 // Successfully updated the entry
-                header('Location: /crud/roster/read'); // Redirect to the read page
+                header('Location: /crud/roster/read');
             } else {
                 // Handle the error, e.g., display an error message or log it
                 echo 'Error updating the roster entry';
             }
         } else {
             // Display the form for updating a roster entry
-            $id = $_GET['id']; // Get the ID of the entry to be updated
-            $entry = $this->model->getEntryById($id); // You may need a method in your model to fetch a single entry
+            $id = $_GET['id'];
+            $entry = $this->getEntryById($id);
             include 'view/update.php';
         }
     }
 
-    public function delete() {
+    public function delete($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Handle form submission for deleting a roster entry
-            $id = $_POST['ID'];
+            $query = "DELETE FROM roster WHERE ID = $id";
 
-            if ($this->model->delete($id)) {
+            if ($this->db->query($query)) {
                 // Successfully deleted the entry
-                header('Location: /crud/roster/read'); // Redirect to the read page
+                header('Location: /crud/roster/read');
             } else {
                 // Handle the error, e.g., display an error message or log it
                 echo 'Error deleting the roster entry';
             }
         } else {
             // Display the confirmation form for deleting a roster entry
-            $id = $_GET['id']; // Get the ID of the entry to be deleted
-            $entry = $this->model->getEntryById($id); // You may need a method in your model to fetch a single entry
+            $id = $_GET['id'];
+            $entry = $this->getEntryById($id);
             include 'view/delete.php';
         }
     }
+    public function getEntryById($id) {
+        $query = "SELECT * FROM roster WHERE ID = $id";
+        $result = $this->db->query($query);
+        
+        if ($result) {
+            return $result->fetch_assoc();
+        } else {
+            // Handle the error, e.g., display an error message or return an empty array
+            return array();
+        }
+    }
 }
-
 ?>
