@@ -20,8 +20,8 @@
                 <td><?php echo $entry['LastName']; ?></td>
                 <td><?php echo $entry['StaffID']; ?></td>
                 <td>
-                    <a href="src/view/update?id=<?php echo $entry['ID']; ?>">Edit</a> |
-                    <a href="src/view/delete?id=<?php echo $entry['ID']; ?>">Delete</a>
+                    <button href="src/view/update?id=<?php echo $id; ?>">Edit</button> |
+                    <button href="src/view/delete?id=<?php echo $id; ?>">Delete</button>
                 </td>
             </tr>
         <?php endforeach; ?>
