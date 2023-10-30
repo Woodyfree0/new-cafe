@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Oct 04, 2023 at 01:38 AM
+-- Generation Time: Oct 29, 2023 at 11:02 PM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -33,6 +33,14 @@ CREATE TABLE `Roster` (
   `FirstName` varchar(255) NOT NULL,
   `LastName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `Roster`
+--
+
+INSERT INTO `Roster` (`Date`, `StaffID`, `FirstName`, `LastName`) VALUES
+('2023-10-31', 2, 'Jane', 'Smith'),
+('2023-11-01', 3, 'Bob', 'Johnson');
 
 --
 -- Indexes for dumped tables

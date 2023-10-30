@@ -35,31 +35,38 @@
       </symbol>
     </svg>
 <?
+require 'vendor/autoload.php';
 include('DB_Connect.php');
+use Model\RosterModel;
+use Controller\RosterController;
+
+$model = new Model\RosterModel($conn); 
+$controller = new Controller\RosterController($model);
+
+if (isset($_GET['action'])) {
+  $action = $_GET['action'];
+
+  switch ($action) {
+      case 'create':
+          $controller->create();
+          break;
+      case 'read':
+          $controller->read();
+          break;
+      case 'update':
+          $controller->update();
+          break;
+      case 'delete':
+          $controller->delete();
+          break;
+      default:
+          echo 'Invalid action';
+          break;
+  }
+}
+
+include ('view/read.php');
 ?>
-<table>
-  <tr>
-    <th> date</th>
-    <th> First Name </th>
-    <th> Last Name </th>
-  </tr>
-<? 
-$sql =" SELECT Date, FirstName, LastName FROM Roster";
-$result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row["Date"] . "</td>";
-                    echo "<td>" . $row["FirstName"] . "</td>";
-                    echo "<td>" . $row["LastName"] . "</td>";
-                    echo "</tr>";
-                }
-            }
-
-            $conn->close();
-        ?>
-</table>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
