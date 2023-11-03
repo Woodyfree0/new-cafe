@@ -34,9 +34,3 @@ function addMenuItem() {
     }
   }
   
-
-  function ConfirmRes{
-    onclick
-
-    )
-  }

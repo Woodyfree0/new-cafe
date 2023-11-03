@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: rota.php"); // Redirect to the dashboard or authorized page
         exit();
     } else {
+        echo "Authentication failed. Invalid username or password.";
         // Authentication failed
         $_SESSION['login_status'] = 'Login failed, try again.';
         $error = "Invalid username or password.";

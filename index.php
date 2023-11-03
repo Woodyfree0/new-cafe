@@ -1,4 +1,6 @@
-<? session_start(); ?>
+<? if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -129,34 +131,7 @@
   <li class="ms-3"><a class="link-body-emphasis" href="https://instagram.com"><i class="bi bi-instagram bi-dark"></i></a></li>
   <li class="ms-3"><a class="link-body-emphasis" href="https://facebook.com"><i class="bi bi-facebook bi-dark"></i></a></li>
 </ul>
-<?
-if (isset($_GET['uri'])) {
-  $uri = rtrim($_GET['uri'], '/');
-  $parts = explode('/', $uri);
 
-  if (count($parts) >= 2) {
-      $table = $parts[1];
-      $action = isset($parts[2]) ? $parts[2] : 'read';
-
-      $controllerClass = $table . 'Controller'; // Assume the class name is already correctly capitalized
-
-      if (class_exists($controllerClass)) {
-          $controller = new $controllerClass;
-
-          if (method_exists($controller, $action)) {
-              $controller->$action();
-          } else {
-              echo 'Invalid action';
-          }
-      } else {
-          echo 'Controller class does not exist';
-      }
-  } else {
-      echo 'Invalid URL';
-  }
-}
-
-?>
 </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

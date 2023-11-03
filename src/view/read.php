@@ -1,6 +1,11 @@
+<? if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+} ?>
 <!DOCTYPE html>
+<? require 'routes.php'; ?>
 <html>
 <head>
+
     <title>Roster Entries</title>
 </head>
 <body>
@@ -20,9 +25,8 @@
                 <td><?php echo $entry['LastName']; ?></td>
                 <td><?php echo $entry['StaffID']; ?></td>
                 <td>
-                    <button href="src/view/update?id=<?php echo $id; ?>">Edit</button> |
-                    <button href="src/view/delete?id=<?php echo $id; ?>">Delete</button>
-                </td>
+                <a href="/update">Edit</a>
+                <a href="/delete">Delete</a>
             </tr>
         <?php endforeach; ?>
     </table>
