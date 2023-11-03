@@ -61,14 +61,14 @@ class controller {
 
     public function update($id, $data) {
         try {
-            $query = "UPDATE roster SET
+            $query = "UPDATE Roster SET
                 Date = '" . $data['Date'] . "',
                 FirstName = '" . $data['FirstName'] . "',
                 LastName = '" . $data['LastName'] . "',
                 StaffID = '" . $data['StaffID'] . "'
                 WHERE ID = $id";
             $result = $this->db->query($query);
-
+            require ('src/view/update.php');
             if (!$result) {
                 throw new Exception("Failed to update data");
             }

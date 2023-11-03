@@ -1,35 +1,21 @@
 <? 
-// if (isset($_GET['uri'])) {
-//   $uri = rtrim($_GET['uri'], '/');
-//   $parts = explode('/', $uri);
+function dd($value){
+  echo "<pre>";
+  var_dump($value);
+  echo "</pre>";
 
-//   if (count($parts) >= 2) {
-//       $table = $parts[1];
-//       $action = isset($parts[2]) ? $parts[2] : 'read';
+  die();
+}
 
-//       $controllerClass = $table . 'Controller'; // Assume the class name is already correctly capitalized
+function urlIs($value){
+  return $_SERVER['REQUEST_URI'] === $value;
+}
 
-//       if (class_exists($controllerClass)) {
-//           $controller = new $controllerClass;
-
-//           if (method_exists($controller, $action)) {
-//               $controller->$action();
-//           } else {
-//               echo 'Invalid action';
-//           }
-//       } else {
-//           echo 'Controller class does not exist';
-//       }
-//   } else {
-//       echo 'Invalid URL';
-//   }
-// }
-
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
   $routes = [
     '/delete' => 'src/view/delete.php',
     '/update' => 'src/view/update.php',
-    '/create' => 'create.php'];
+    '/create' => 'src/view/create.php'];
 
     if (array_key_exists($uri, $routes)){
       require $routes[$uri];}
