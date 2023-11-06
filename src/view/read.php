@@ -3,7 +3,9 @@
 } ?>
 <!DOCTYPE html>
 <? require 'routes.php'; ?>
+
 <?
+test();
 echo $_SERVER['REQUEST_URI'];?>
 <html>
 <head>

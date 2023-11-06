@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 include('DB_Connect.php');
 
 // SQL query to select all records from the Menu_items table

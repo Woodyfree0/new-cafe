@@ -88,7 +88,7 @@ class controller {
             if (!$result) {
                 echo ("Failed to delete data");
             }
-
+            require ('src/view/delete.php');
             return $result;
         } catch (Exception $e) {
             // Handle database error
