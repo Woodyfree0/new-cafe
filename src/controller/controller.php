@@ -80,9 +80,9 @@ class controller {
         }
     }
 
-    public function delete($id) {
+    public function delete($staffID) {
         try {
-            $query = "DELETE FROM roster WHERE ID = $id";
+            $query = "DELETE FROM Roster WHERE ID = $staffID";
             $result = $this->db->query($query);
 
             if (!$result) {
