@@ -4,9 +4,11 @@ namespace MyApp\controller;
 use MyApp\model\model;
 use mysqli;
 use Exception;
+require 'DB_Connect.php';
 
 class controller {
     private $db;
+    
 
     public function __construct(mysqli $db) {
         $this->db = $db;
@@ -14,14 +16,14 @@ class controller {
 
     public function create($data) {
         try {
-            $query = "INSERT INTO roster (Date, FirstName, LastName, StaffID) VALUES (
+            $query = "INSERT INTO Roster (Date, FirstName, LastName, StaffID) VALUES (
                 '" . $data['Date'] . "',
                 '" . $data['FirstName'] . "',
                 '" . $data['LastName'] . "',
                 '" . $data['StaffID'] . "'
             )";
             $result = $this->db->query($query);
-
+            echo "Created entry.";
             if (!$result) {
                 throw new Exception("Failed to insert data");
             }
@@ -66,9 +68,8 @@ class controller {
                 FirstName = '" . $data['FirstName'] . "',
                 LastName = '" . $data['LastName'] . "',
                 StaffID = '" . $data['StaffID'] . "'
-                WHERE ID = $id";
+                WHERE StaffID = $id";
             $result = $this->db->query($query);
-            require ('src/view/update.php');
             if (!$result) {
                 throw new Exception("Failed to update data");
             }
@@ -80,15 +81,14 @@ class controller {
         }
     }
 
-    public function delete($staffID) {
+    public function delete($id) {
         try {
-            $query = "DELETE FROM Roster WHERE ID = $staffID";
+            $query = "DELETE FROM Roster WHERE staffID = $id";
             $result = $this->db->query($query);
-
+            
             if (!$result) {
                 echo ("Failed to delete data");
             }
-            require ('src/view/delete.php');
             return $result;
         } catch (Exception $e) {
             // Handle database error

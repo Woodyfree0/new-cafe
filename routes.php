@@ -10,7 +10,7 @@ function urlIs($value){
   var_dump($_SERVER['REQUEST_URI']);
   return $_SERVER['REQUEST_URI'] === $value;
 }
-function test(){
+function routes(){
 
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];

@@ -4,9 +4,6 @@
 <!DOCTYPE html>
 <? require 'routes.php'; ?>
 
-<?
-test();
-echo $_SERVER['REQUEST_URI'];?>
 <html>
 <head>
 
@@ -29,10 +26,17 @@ echo $_SERVER['REQUEST_URI'];?>
                 <td><?php echo $entry['LastName']; ?></td>
                 <td><?php echo $entry['StaffID']; ?></td>
                 <td>
-                <a href="/update">Edit</a>
-                <a href="/delete">Delete</a>
+                <a href="/update?id=<?php echo $entry['StaffID']; ?>">Edit</a>
+                <a href="/delete?id=<?php echo $entry['StaffID']; ?>">Delete</a>
             </tr>
         <?php endforeach; ?>
+        <form action="/create" method="post">
+    <input type="text" name="Date" placeholder="Date">
+    <input type="text" name="FirstName" placeholder="First Name">
+    <input type="text" name="LastName" placeholder="Last Name">
+    <input type="number" name="StaffID" placeholder="Staff ID">
+    <button type="submit">create</button>
+</form>
     </table>
 </body>
 </html>
