@@ -1,34 +1,25 @@
-<?if (session_status() == PHP_SESSION_NONE) {
-  session_start();}?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Menu Page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css">  
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Oranage Team Cafe Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">  
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">    
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="navbar-fixed.css" rel = "stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../../navbar-fixed.css" rel = "stylesheet">
+    <link href ="
     <?
-    include('DB_Connect.php');
+        echo '<link href="'.__DIR__.'/../../styles.css." rel="stylesheet">';
     ?>
-    </head>
-    <body>
-      <!-- header -->
-    <header class="header">
-        <div class="header-content">
-            <h1>Welcome to Our Menu</h1>
-            <p>Discover our delicious dishes</p>
-        </div>
-    </header>
+  </head>
+  <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -44,7 +35,7 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
     </svg>
-    <!-- theme button -->
+
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
               id="bd-theme"
@@ -79,7 +70,8 @@
         </li>
       </ul>
     </div>
-    <!-- nav -->
+
+    
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Cafe Website</a>
@@ -89,7 +81,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="menu.php">Menu</a>
+          <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
         </li>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="bookings.php">Book Table</a>
@@ -107,44 +99,10 @@
       </ul>
     </div>
   </div>
-</nav>
-<!-- menu update -->
-<form action="process_menu.php" method="POST">
-    <label for ="Item"> Item ID: </label>
-    <input type="number" name="item_id" id="ID">
-
-    <label for="name">Item Name:</label>
-    <input type="text" name="name" id="name" required>
-
-    <label for="description">Description:</label>
-    <textarea name="description" id="description" required></textarea>
-
-    <label for="price">Price:</label>
-    <input type="number" name="price" id="price" step="0.01" required>
-
-    <button type="submit" name= "edit">Save</button>
-    <button type="submit" name="add">Add New</button>
-</form>
-
-<!-- menu container -->
-<?
-$sql = "SELECT * FROM Menu_items";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class='menu-item'>";
-        echo "<div class='item-name'>" . $row["Name"] . "</div>";
-        echo "<div class='item-description'>" . $row["Desc"] . "</div>";
-        echo "<div class='item-price'>$" . $row["Price"] . "</div>";
-        echo "</div>";
-    }
-} else {
-    echo "No menu items found.";
-}
-?>
-<!-- footer -->
-  <footer>     
+</nav>    
+</main>
+   </body> 
+   <footer>     
 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>Oranage Team Cafe Website 2023.</p>
       <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com"><i class="bi bi-twitter bi-dark"></i></a></li>
@@ -154,8 +112,9 @@ if ($result->num_rows > 0) {
 
 </div>
 </footer>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script src="../assets/js/color-modes.js"></script> 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
 </html>
