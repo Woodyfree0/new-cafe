@@ -2,16 +2,22 @@
  require 'DB_Connect.php'; // Ensure this file establishes a valid database connection
  require_once 'vendor/autoload.php'; 
  use MyApp\controller\controller;
-function dd($value){
-  echo "<pre>";
-  var_dump($value);
-  echo "</pre>";
-  die();
-} 
+ if (!function_exists('dd')) {
+  // Define dd() function only if it doesn't exist
+  function dd($data) {
+      echo '<pre>';
+      var_dump($data);
+      echo '</pre>';
+      die();
+  }
+}
+ 
 
-function urlIs($value){
+if ( !function_exists('urlIs')) {
+  function urlIs($value){
   var_dump($_SERVER['REQUEST_URI']);
   return $_SERVER['REQUEST_URI'] === $value;
+}
 }
    $conn = new mysqli(
         $servername = "db",
@@ -41,14 +47,14 @@ function urlIs($value){
            '/create' =>  function () use($con, $conn){ 
             if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-            }
+            
             $data =[ 'Date' => $_POST['Date'],
             'FirstName' => $_POST['FirstName'],
             'LastName' => $_POST['LastName'],
             'StaffID' => $_POST['StaffID']
           ];
             $con->create($data);
-            
+        }
 
 
 
@@ -91,4 +97,5 @@ function urlIs($value){
    
    // Execute the router
    $router();
+   mysqli_close($conn);
   ?>
