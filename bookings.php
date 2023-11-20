@@ -136,7 +136,7 @@ if (isset($_SESSION['available_tables']) && !empty($_SESSION['available_tables']
       echo "<input type='hidden' name='selected_date' value='$selected_date'>";
       echo "<input type='hidden' name='selected_time' value='$selected_time'>";
       echo '<button type="submit">';
-      echo '<a href="make_reservation.php?table_id=' . $table["table_id"] . '&selected_date=' . $selected_date . '&selected_time=' . $selected_time . '">Reserve</a>';
+      echo '<a href="/make_reservation?table_id=' . $table["table_id"] . '&selected_date=' . $selected_date . '&selected_time=' . $selected_time . '">Reserve</a>';
       echo '</button>';
       echo '</form>';
   }

@@ -7,7 +7,7 @@ function dd($value){
   var_dump($value);
   echo "</pre>";
   die();
-}
+} 
 
 function urlIs($value){
   var_dump($_SERVER['REQUEST_URI']);
@@ -69,6 +69,11 @@ function urlIs($value){
             require 'bookings.php';
             exit();
           },
+          '/make_reservation' => function(){
+            require 'make_reservation.php';
+            exit();
+          },
+          
             
           
        ];

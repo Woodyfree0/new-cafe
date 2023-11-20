@@ -74,7 +74,7 @@
     
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Cafe Website</a>
+    <a class="navbar-brand" href="/index">Cafe Website</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,16 +84,16 @@
           <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="bookings.php">Book Table</a>
+        <a class="nav-link active" aria-current="page" href="/bookings">Book Table</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
+        <a class="nav-link active" aria-current="page" href="/ordering">Online Ordering</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="login.php">Staff Login</a>
+        <a class="nav-link active" aria-current="page" href="/login">Staff Login</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="Logout.php">Logout</a>
+        <a class="nav-link active" aria-current="page" href="/Logout">Logout</a>
         </li>
         <li> <? include('user_info.php') ?>
       </ul>
@@ -102,19 +102,3 @@
 </nav>    
 </main>
    </body> 
-   <footer>     
-<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>Oranage Team Cafe Website 2023.</p>
-      <li class="ms-3"><a class="link-body-emphasis" href="https://twitter.com"><i class="bi bi-twitter bi-dark"></i></a></li>
-  <li class="ms-3"><a class="link-body-emphasis" href="https://instagram.com"><i class="bi bi-instagram bi-dark"></i></a></li>
-  <li class="ms-3"><a class="link-body-emphasis" href="https://facebook.com"><i class="bi bi-facebook bi-dark"></i></a></li>
-</ul>
-
-</div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-    <script src="../assets/js/color-modes.js"></script> 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    
-</html>
