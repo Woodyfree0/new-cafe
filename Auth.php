@@ -1,5 +1,6 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();}
 include('DB_Connect.php');
 
 
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) === 1) {
         // Authentication successful
         $_SESSION['username'] = $username;
-        header("Location: rota.php"); // Redirect to the dashboard or authorized page
+        header("Location: /rota"); // Redirect to the dashboard or authorized page
         exit();
     } else {
         echo "Authentication failed. Invalid username or password.";
