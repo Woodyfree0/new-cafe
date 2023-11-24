@@ -87,6 +87,9 @@
         <a class="nav-link active" aria-current="page" href="/bookings">Book Table</a>
         </li>
         <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/rota">Roster</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/ordering">Online Ordering</a>
         </li>
         <li class="nav-item">

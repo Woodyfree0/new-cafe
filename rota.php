@@ -1,4 +1,5 @@
-<? session_start(); ?>
+<? if (session_status() == PHP_SESSION_NONE) {
+    session_start();}; ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -39,6 +40,7 @@ include('DB_Connect.php');
 $model = new MyApp\model\model($conn); 
 $controller = new MyApp\controller\controller($conn);
 $data = $controller -> read();
+mysqli_close($conn);
 
 
 ?>

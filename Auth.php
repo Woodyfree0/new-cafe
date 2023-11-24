@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();}
+    session_start();};
 include('DB_Connect.php');
 
 

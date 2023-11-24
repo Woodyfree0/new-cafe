@@ -53,11 +53,13 @@ class controller {
             include('src/view/read.php');
     
             return $data;
+            
         } catch (Exception $e) {
             // Handle any exceptions, e.g., log the error
             echo "An error occurred: " . $e->getMessage();
             return [];
         }
+        
     }
     
 
@@ -79,6 +81,7 @@ class controller {
             // Handle database error
             return false;
         }
+        
     }
 
     public function delete($id) {
@@ -94,6 +97,9 @@ class controller {
             // Handle database error
             return false;
         }
+        
     }
+    
 }
+mysqli_close($conn);
 ?>

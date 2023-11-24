@@ -18,4 +18,3 @@ if (!mysqli_select_db($conn, $database)) {
     die("Database selection failed: " . mysqli_error($conn));
 }
 ?>
-

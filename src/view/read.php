@@ -2,7 +2,6 @@
     session_start();
 } ?>
 <!DOCTYPE html>
-<? require 'routes.php'; ?>
 
 <html>
 <head>
@@ -29,7 +28,8 @@
                 <a href="/update?id=<?php echo $entry['StaffID']; ?>">Edit</a>
                 <a href="/delete?id=<?php echo $entry['StaffID']; ?>">Delete</a>
             </tr>
-        <?php endforeach; ?>
+        <?php endforeach;?>
+
         <form action="/create" method="post">
     <input type="text" name="Date" placeholder="Date">
     <input type="text" name="FirstName" placeholder="First Name">
@@ -40,3 +40,4 @@
     </table>
 </body>
 </html>
+
