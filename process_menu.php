@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Redirect back to the menu page after a brief delay -->
     <script>
         setTimeout(function() {
-            window.location.href = "menu.php";
+            window.location.href = "/menu";
         }, 3000); // Redirect after 3 seconds (adjust the delay as needed)
     </script>
 </body>

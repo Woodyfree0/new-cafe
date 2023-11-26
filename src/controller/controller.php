@@ -101,5 +101,4 @@ class controller {
     }
     
 }
-mysqli_close($conn);
 ?>

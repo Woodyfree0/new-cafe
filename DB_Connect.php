@@ -17,4 +17,12 @@ if ($conn->connect_error) {
 if (!mysqli_select_db($conn, $database)) {
     die("Database selection failed: " . mysqli_error($conn));
 }
+// Close the connection properly when done with it
+if (!function_exists('closeConnection')) {
+    function closeConnection($conn) {
+        if ($conn) {
+            mysqli_close($conn);
+        }
+    }
+}
 ?>

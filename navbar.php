@@ -90,7 +90,7 @@
         <a class="nav-link active" aria-current="page" href="/rota">Roster</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/ordering">Online Ordering</a>
+        <a class="nav-link active" aria-current="page" href="/order">Online Ordering</a>
         </li>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/login">Staff Login</a>

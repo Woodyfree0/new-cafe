@@ -1,6 +1,9 @@
 <? if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } ?>
+<?
+  require_once ('routes.php'); 
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -77,7 +80,7 @@
     
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Cafe Website</a>
+    <a class="navbar-brand" href="/index">Cafe Website</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -90,13 +93,13 @@
         <a class="nav-link active" aria-current="page" href="/bookings">Book Table</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="ordering.php">Online Ordering</a>
+        <a class="nav-link active" aria-current="page" href="/order">Online Ordering</a>
         </li>
         <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/login">Staff Login</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="Logout.php">Logout</a>
+        <a class="nav-link active" aria-current="page" href="/Logout">Logout</a>
         </li>
         <li> <? include('user_info.php') ?>
       </ul>
