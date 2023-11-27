@@ -31,7 +31,7 @@ function runRouter()
          'Date' => '2000-01-01',
          'FirstName' => 'Sam',
          'LastName' => 'Wood',
-         'StaffID' => 101
+         'StaffID' => 104
        ];
        $con->update($id, $data);
       },
@@ -77,7 +77,7 @@ function runRouter()
        require 'ordering.php';
        exit;
      },
-     'confirm' => function(){
+     '/confirm' => function(){
       require 'confirmation.php';
       exit();
      },

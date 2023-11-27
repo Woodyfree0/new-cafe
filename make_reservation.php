@@ -36,8 +36,8 @@
         // exit();
     }
 ?>
-    <a href="bookings.php">Back to Bookings</a>
-    <form action="confirmation.php" method="post">
+    <a href="/bookings">Back to Bookings</a>
+    <form action="/confirm" method="post">
         <input type="hidden" name="table_id" value="<?php echo $table_id; ?>">
         <input type="hidden" name="selected_date" value="<?php echo $selected_date; ?>">
         <input type="hidden" name="selected_time" value="<?php echo $selected_time; ?>">  
