@@ -1,5 +1,13 @@
 {
+    "name": "sam/cafewebsite",
+    "require":{
+    "phpunit/phpunit": "10.4.2"
+},
+
     "autoload": {
         "psr-4": {
-            "MyApp\\": "src/" 
-        }}}
+            "MyApp\\": "src/"
+        }
+        
+    }
+}
