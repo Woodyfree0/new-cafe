@@ -1,17 +1,11 @@
 <?php
-namespace MyApp\model;
+namespace MyApp\controller;
 use MyApp\controller\controller;
+use mysqli;
 require_once 'vendor/autoload.php';
-
 class router
 {
     private $db;
-
-    public function __construct(controller $db)
-    {
-        require 'DB_Connect.php'; // Ensure this file establishes a valid database connection
-        $this->db = new $db($conn);
-    }
 
     public function run()
     {
@@ -92,7 +86,6 @@ class router
         return $_SERVER['REQUEST_URI'] === $value;
     }
 }
-
 // Create an instance of the Router class and run it
-$router = new Router($db);
+$router = new \MyApp\controller\router();
 $router->run();
