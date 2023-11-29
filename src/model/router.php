@@ -1,15 +1,16 @@
 <?php
 namespace MyApp\model;
+use MyApp\controller\controller;
 require_once 'vendor/autoload.php';
 
 class router
 {
     private $db;
 
-    public function __construct()
+    public function __construct(controller $db)
     {
         require 'DB_Connect.php'; // Ensure this file establishes a valid database connection
-        $this->db = new MyApp\controller\controller($conn);
+        $this->db = new $db($conn);
     }
 
     public function run()
@@ -93,5 +94,5 @@ class router
 }
 
 // Create an instance of the Router class and run it
-$router = new Router();
+$router = new Router($db);
 $router->run();
