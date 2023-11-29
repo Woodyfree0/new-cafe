@@ -3,7 +3,7 @@
         'name' => 'sam/cafewebsite',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'aad213bd93e025b00458843cfdff2c0c9d0932e8',
+        'reference' => '9f5e11a293662d1a822e2b43be37dca59dca9a0f',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -103,7 +103,7 @@
         'sam/cafewebsite' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'aad213bd93e025b00458843cfdff2c0c9d0932e8',
+            'reference' => '9f5e11a293662d1a822e2b43be37dca59dca9a0f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

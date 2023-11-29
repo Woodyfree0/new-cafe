@@ -1,9 +1,8 @@
 <?php
+namespace MyApp\model;
 require_once 'vendor/autoload.php';
 
-use MyApp\controller\controller;
-
-class Router
+class router
 {
     private $db;
 

@@ -4,7 +4,7 @@ namespace MyApp\model;
 
 use mysqli;
 
-class Model {
+class model {
     private $db;
 
     public function __construct(mysqli $db) {
