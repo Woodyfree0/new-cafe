@@ -1,5 +1,6 @@
 <?php
-
+namespace MyApp\controller;
+use mysqli;
 class DB_Connect {
     private $conn;
 

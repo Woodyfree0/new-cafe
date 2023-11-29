@@ -4,8 +4,8 @@
     stopOnFailure="false">
 
     <testsuites>
-        <testsuite name='tests'>
-            <directory>src/tests/</directory>
+        <testsuite name="MyApp Test Suite">
+            <directory>./src/tests/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
