@@ -1,6 +1,5 @@
 <?php
   require_once 'vendor/autoload.php'; 
-
  use MyApp\controller\controller;
  ini_set('memory_limit', '256M');
 //  if (!function_exists('dd')) {
@@ -111,6 +110,8 @@ if ( !function_exists('urlIs')) {
    // Define your routes
    
    // Execute the router
-
+  
    runRouter();
+
   ?>
+  

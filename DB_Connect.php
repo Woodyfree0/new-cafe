@@ -1,4 +1,5 @@
 <?php
+
 // Database connection settings
 $servername = "db";
 $username = "php_docker";
