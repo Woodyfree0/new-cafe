@@ -17,11 +17,14 @@
   </head>
     <h1>Roster Entries</h1>
 <?
+// Require necessary files and initialize objects
 require 'vendor/autoload.php';
 include('DB_Connect.php');
 $model = new MyApp\model\model($conn); 
 $controller = new MyApp\controller\controller($conn);
+ // Retrieve data using the controller
 $data = $controller -> read();
+// Close the database connection
 mysqli_close($conn);
 
 
