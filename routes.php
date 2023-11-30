@@ -92,7 +92,13 @@ class Router
         return $_SERVER['REQUEST_URI'] === $value;
     }
 }
-
+function dd_dump($data)
+{
+    echo '<pre>';
+    var_dump($data);
+    echo '</pre>';
+    die(); // Halt script execution after dumping
+}
 // Create an instance of the Router class and run it
 $router = new Router();
 $router->run();

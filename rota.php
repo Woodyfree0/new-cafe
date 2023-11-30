@@ -29,9 +29,4 @@ mysqli_close($conn);
 
 
 ?>
-    
-
-    
-
-
 <? require ('footer.php'); ?>
